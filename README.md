@@ -11,7 +11,7 @@ A React Native plugin for Flipper that allows you to create buttons in Flipper t
 
 ## Installation
 
-Find and install the `Arbitrary Buttons` plugin in Flipper
+Find and install the `arbitrary-buttons` plugin in Flipper
 
 In your React Native app, make sure you have `react-native-flipper` installed
 
