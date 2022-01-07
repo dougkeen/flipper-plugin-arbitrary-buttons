@@ -18,6 +18,7 @@ In your React Native app, make sure you have `react-native-flipper` installed
 ## Usage
 
 In your app, you can configure arbitrary buttons in Flipper like so:
+
 ```javascript
 if (__DEV__) {
   import('react-native-flipper').then(({addPlugin}) => {
@@ -28,11 +29,14 @@ if (__DEV__) {
       onConnect(connection) {
         connection.send('createButton', {
           buttonStyle: 'primary', // Can be any of the AntD button types, default is 'default'
-          label: 'My custom debug task', 
+          label: 'My custom debug task',
           methodName: 'customTask',
+          usePayload: true, // Optional... when true, adds a text field where you can specify
+                            // an arbitrary JSON payload to send to the client
+          payloadPlaceholder: '{"custom": 1234}' // Optional... placeholder text for JSON payload field
         })
 
-        connection.receive('customTask', () => {
+        connection.receive('customTask', (payload) => {
           // Do whatever you want!
         })
       },
