@@ -94,7 +94,7 @@ function ButtonAndPayloadPair({
         type={d.buttonStyle || 'default'}
         onClick={() => {
           try {
-            let parsedPayload = [];
+            let parsedPayload = {};
             if (d.usePayload) {
               parsedPayload = JSON.parse(payload);
             }
